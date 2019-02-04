@@ -1,5 +1,7 @@
 import unittest
-import wordstats
+import sys
+
+from wordstats import wordstats
 
 sentence = "The yellow tree in the backyard."
 
