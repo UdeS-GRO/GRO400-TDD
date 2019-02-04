@@ -20,11 +20,17 @@ def ends_w_cons(word):
     else:
         return True
 
+def words_start_w_vowel(words):
+    return [x for x in words if starts_w_vowel(x)]
+
+def words_end_w_cons(words):
+    return [x for x in words if ends_w_cons(x)]
+
 if __name__ == "__main__":
 
     words = full_text.split()
-    words_vowel = [x for x in words if starts_w_vowel(x)]
-    words_cons  = [x for x in words if ends_w_cons(x)]
+    words_vowels = words_start_w_vowel(words)
+    words_cons   = words_end_w_cons(words)
 
     print("Word count:", len(words))
     print("Words that start with a vowel:", len(words_vowel))
