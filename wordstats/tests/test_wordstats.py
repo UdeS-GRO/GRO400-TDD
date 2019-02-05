@@ -30,19 +30,18 @@ class TestWordStats(unittest.TestCase):
                         "Ends with a consonna: 'True'")
 
     def test_vowel_filter(self):
-        words = sentence.split()
+        words = wordstats.split_text(sentence)
         words_vowels = wordstats.words_start_w_vowel(words)
         self.assertEqual(words_vowels, ['yellow', 'in'])
 
     def test_cons_filter(self):
-        words = sentence.split()
+        words = wordstats.split_text(sentence)
         words_cons = wordstats.words_end_w_cons(words)
         self.assertEqual(words_cons, ['yellow', 'in', 'backyard'])
 
-
-
-                                      
-
+    def text_word_split(self):
+        self.assertEqual(sentence,
+                         ['The', 'yellow', 'tree', 'in', 'the', 'backyard'])
 
 if __name__ == '__main__':
     unittest.main()
